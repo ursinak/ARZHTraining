@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="ARZHTraining" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                            </arscnView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7j-HG-fSc">
+                                <rect key="frame" x="0.0" y="749" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Calibrate" id="BuE-WF-BYv">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="calibrateScene:" destination="BV1-FR-VrT" id="yad-Qg-CCQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem enabled="NO" title="Item" image="house.fill" catalog="system" id="gEf-TU-Vu8" userLabel="zhBuildings">
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="setzhBuildingsOpacity:" destination="BV1-FR-VrT" id="ggB-JJ-56c"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="ixS-bo-q6z">
+                                        <stepper key="customView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" maximumValue="100" stepValue="20" id="KkH-Qc-v5t">
+                                            <rect key="frame" x="139" y="6" width="94" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="changeOpacity:" destination="BV1-FR-VrT" eventType="valueChanged" id="8l9-J8-YGu"/>
+                                            </connections>
+                                        </stepper>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="KaT-wq-Q4K"/>
+                                    <barButtonItem image="gear" catalog="system" id="zIS-KS-jej" userLabel="lodPickerButton">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="showLodPicker:" destination="BV1-FR-VrT" id="SOO-qf-BjT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" image="sun.max.fill" catalog="system" id="y5L-DN-CF9" userLabel="Sunlight">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="setSunlightDate:" destination="BV1-FR-VrT" id="4U3-UG-Hsp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="1Gg-Za-1bw"/>
+                                    <barButtonItem style="plain" id="rC9-bo-fna">
+                                        <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="right" contentVerticalAlignment="center" on="YES" id="0pd-UM-pNA">
+                                            <rect key="frame" x="343" y="6.5" width="51" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="switchBasemap:" destination="BV1-FR-VrT" eventType="valueChanged" id="tE7-uI-OsP"/>
+                                            </connections>
+                                        </switch>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calibrate to begin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pc1-SY-ogW">
+                                <rect key="frame" x="0.0" y="728.5" width="414" height="20.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-10" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="FBV-Rk-4t8" userLabel="CalibrationSlider">
+                                <rect key="frame" x="204" y="542.5" width="286" height="31"/>
+                                <connections>
+                                    <action selector="calibrateHeight:" destination="BV1-FR-VrT" eventType="valueChanged" id="lfn-FR-2QK"/>
+                                </connections>
+                            </slider>
+                            <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="3NA-Mo-t10">
+                                <rect key="frame" x="0.0" y="558.5" width="414" height="170"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="hcl-Bj-GNW"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="changeSunlightDate:" destination="BV1-FR-VrT" eventType="valueChanged" id="6be-HG-6nx"/>
+                                </connections>
+                            </datePicker>
+                            <pickerView hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y21-mf-kwj" userLabel="lodPicker">
+                                <rect key="frame" x="0.0" y="558.5" width="414" height="170"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="zoe-KQ-v92"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="04v-hv-g9P"/>
+                            <constraint firstAttribute="trailing" secondItem="FBV-Rk-4t8" secondAttribute="trailing" constant="-74" id="36c-bz-ckU"/>
+                            <constraint firstItem="pc1-SY-ogW" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="4Eg-5K-Fw6"/>
+                            <constraint firstItem="pc1-SY-ogW" firstAttribute="top" secondItem="Y21-mf-kwj" secondAttribute="bottom" id="FlW-gL-hzp"/>
+                            <constraint firstAttribute="trailing" secondItem="s7j-HG-fSc" secondAttribute="trailing" id="K27-xI-GSy"/>
+                            <constraint firstItem="s7j-HG-fSc" firstAttribute="leading" secondItem="U0K-SW-4ec" secondAttribute="leading" id="RPk-Cq-WYY"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="pc1-SY-ogW" secondAttribute="trailing" id="X12-8O-Qal"/>
+                            <constraint firstItem="pc1-SY-ogW" firstAttribute="top" secondItem="FBV-Rk-4t8" secondAttribute="bottom" constant="156" id="XPS-XH-6eO"/>
+                            <constraint firstItem="3NA-Mo-t10" firstAttribute="trailing" secondItem="pc1-SY-ogW" secondAttribute="trailing" id="YRW-w1-XGV"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="bxe-nn-x88"/>
+                            <constraint firstItem="Y21-mf-kwj" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="bzh-rF-s5a"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="fGL-LI-c2X"/>
+                            <constraint firstItem="s7j-HG-fSc" firstAttribute="top" secondItem="pc1-SY-ogW" secondAttribute="bottom" id="hmC-wh-7Dn"/>
+                            <constraint firstItem="FBV-Rk-4t8" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="206" id="lPG-oa-NRZ"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="lTH-nI-hp4"/>
+                            <constraint firstItem="3NA-Mo-t10" firstAttribute="leading" secondItem="pc1-SY-ogW" secondAttribute="leading" id="lnB-3h-DdU"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="s7j-HG-fSc" secondAttribute="bottom" constant="20" id="qIl-TP-4KW"/>
+                            <constraint firstItem="pc1-SY-ogW" firstAttribute="top" secondItem="3NA-Mo-t10" secondAttribute="bottom" id="vPL-8x-uXQ"/>
+                            <constraint firstItem="Y21-mf-kwj" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="vbz-TQ-7Fm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="basemapSwitch" destination="0pd-UM-pNA" id="IJE-i6-3Si"/>
+                        <outlet property="calibrateInfo" destination="pc1-SY-ogW" id="Qco-h7-DqY"/>
+                        <outlet property="calibrationSlider" destination="FBV-Rk-4t8" id="UxH-nv-RPl"/>
+                        <outlet property="calibrationToolbar" destination="s7j-HG-fSc" id="ziW-kb-Sco"/>
+                        <outlet property="changeOpacityStepper" destination="KkH-Qc-v5t" id="16I-TR-zOU"/>
+                        <outlet property="lodPicker" destination="Y21-mf-kwj" id="4dp-jq-RaG"/>
+                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <outlet property="showLodPickerButton" destination="zIS-KS-jej" id="HEQ-eK-Hnl"/>
+                        <outlet property="sunlightButton" destination="y5L-DN-CF9" id="Sl2-4l-rjM"/>
+                        <outlet property="sunlightDatePicker" destination="3NA-Mo-t10" id="h9I-Hb-9Im"/>
+                        <outlet property="zhBuildingsButton" destination="gEf-TU-Vu8" id="yU4-xd-Wh7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.98550724637681" y="111.16071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="sun.max.fill" catalog="system" width="64" height="62"/>
+    </resources>
+</document>
